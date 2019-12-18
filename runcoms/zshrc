@@ -14,6 +14,9 @@ fi
 
 # All the rest ...
 
+# Set the path where ZSH should look for additional completion function
+fpath=(~/.dotfiles/zsh/completion $fpath)
+
 # PATH and other useful ENV variables
 # if commented, look in ~/.zprofile if the variable is already exported
 #export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
