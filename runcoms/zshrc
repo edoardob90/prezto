@@ -66,6 +66,3 @@ if [[ -f ${HOME}/.abbrevs.zsh ]]; then
 else
     source $DOTDIR/zsh/abbrevs.zsh
 fi
-
-# Env settings
-[[ -f ${DOTDIR}/zsh/env.zsh ]] && source ${DOTDIR}/zsh/env.zsh
