@@ -50,8 +50,9 @@ BASE16_SHELL="$DOTDIR/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# Aliases
-# Source the first alias file found. Look up in the follwing order: ~/.aliases.zsh, ~/.dotfiles/zsh/aliases.zsh
+# Additional settings: aliases, abbreviations, environment
+# Source the first alias/abbrev/env file found. Look up in the follwing order: ${HOME}, ${DOTDIR}/zsh
+
 if [[ -f ${HOME}/.aliases.zsh ]]; then
     source $HOME/.aliases.zsh
 else
@@ -59,4 +60,12 @@ else
 fi
 
 # Command abbreviations
-source $DOTDIR/zsh/abbrevs.zsh
+# Source the first abbrevs file found. Look up in the follwing order: ~/.abbrevs.zsh, ~/.dotfiles/zsh/abbrevs.zsh
+if [[ -f ${HOME}/.abbrevs.zsh ]]; then
+    source ${HOME}/.abbrevs.zsh
+else
+    source $DOTDIR/zsh/abbrevs.zsh
+fi
+
+# Env settings
+[[ -f ${DOTDIR}/zsh/env.zsh ]] && source ${DOTDIR}/zsh/env.zsh
