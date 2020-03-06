@@ -19,9 +19,9 @@ fpath=(~/.dotfiles/zsh/completion $fpath)
 
 # PATH and other useful ENV variables
 # if commented, look in ~/.zprofile if the variable is already exported
-#export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:$PATH
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-#export PATH="$PATH:$HOME/.rvm/bin"
+# Source the local file ${HOME}/.env.zsh, if present
+[[ -f ${HOME}/.env.zsh ]] && source ${HOME}/.env.zsh
+
 # Make sure lang environment variables are ok
 #export LC_ALL=en_US.UTF-8
 
@@ -66,6 +66,3 @@ if [[ -f ${HOME}/.abbrevs.zsh ]]; then
 else
     source $DOTDIR/zsh/abbrevs.zsh
 fi
-
-# Env settings
-[[ -f ${DOTDIR}/zsh/env.zsh ]] && source ${DOTDIR}/zsh/env.zsh
