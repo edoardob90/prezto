@@ -53,16 +53,10 @@ BASE16_SHELL="$DOTDIR/base16-shell/"
 # Additional settings: aliases, abbreviations, environment
 # Source the first alias/abbrev/env file found. Look up in the follwing order: ${HOME}, ${DOTDIR}/zsh
 
-if [[ -f ${HOME}/.aliases.zsh ]]; then
-    source $HOME/.aliases.zsh
-else
-    source $DOTDIR/zsh/aliases.zsh
-fi
-
-# Command abbreviations
-# Source the first abbrevs file found. Look up in the follwing order: ~/.abbrevs.zsh, ~/.dotfiles/zsh/abbrevs.zsh
-if [[ -f ${HOME}/.abbrevs.zsh ]]; then
-    source ${HOME}/.abbrevs.zsh
-else
-    source $DOTDIR/zsh/abbrevs.zsh
-fi
+for file in aliases abbrevs env; do
+  if [[ -f ${HOME}/."$file".zsh ]]; then
+      source $HOME/."$file".zsh
+  else
+      source $DOTDIR/zsh/"$file".zsh
+  fi
+done
