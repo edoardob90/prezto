@@ -6,6 +6,8 @@
 #   Edoardo Baldi <edoardob90@gmail.com>
 #
 export DOTDIR="$HOME/.dotfiles"
+export DOT_DIR=${DOTDIR}
+export DOT_REPO="https://github.com/edoardob90/dotfiles.git"
 
 # Source Prezto.
 if [[ -s "${DOTDIR:-$HOME}/zprezto/init.zsh" ]]; then
@@ -15,7 +17,14 @@ fi
 # All the rest ...
 
 # Set the path where ZSH should look for additional completion function
-fpath=(~/.dotfiles/zsh/completion $fpath)
+fpath=(~/.dotfiles/zsh/completion ${HOME}/.dotfiles/dotfiles-manager $fpath)
+
+# dotfiles manager
+if [[ -f ${DOTDIR}/dotfiles-manager/dot.sh ]]; then
+    source ${DOTDIR}/dotfiles-manager/dot.sh
+else
+    echo "WARNING: dotfiles manager 'dot.sh' not found! Did you clone the repo recursively?" >&2
+fi
 
 # PATH and other useful ENV variables
 # if commented, look in ~/.zprofile if the variable is already exported
