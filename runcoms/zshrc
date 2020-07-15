@@ -59,6 +59,13 @@ BASE16_SHELL="$DOTDIR/base16-shell/"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# Python: managed by pyenv on macOS
+if [[ $(uname) == 'Darwin' ]]; then
+   if command -v pyenv 1>/dev/null 2>&1; then
+      eval "$(pyenv init -)"
+   fi
+fi
+
 # Additional settings: aliases, abbreviations, environment
 # Source the first alias/abbrev/env file found. Look up in the follwing order: ${HOME}, ${DOTDIR}/zsh
 
