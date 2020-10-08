@@ -14,6 +14,11 @@ fi
 # Add zsh-completions to $fpath.
 fpath=("${0:h}/external/src" $fpath)
 
+# Brew completions
+if is-darwin; then
+    fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fi
+
 #
 # Options
 #
