@@ -211,7 +211,7 @@ zstyle ':prezto:module:ssh:load' identities 'cscs_rsa' 'github_rsa' 'z4ws_rsa'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' local 'no'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
