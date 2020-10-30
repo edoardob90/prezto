@@ -35,6 +35,7 @@ zstyle ':prezto:load' pmodule \
   'gnu-utility' \
   'utility' \
   'homebrew' \
+  'docker' \
   'completion' \
   'fasd' \
   'git' \
@@ -155,7 +156,7 @@ zstyle ':prezto:module:prompt' theme 'steeef'
 # zstyle ':prezto:module:screen:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-zstyle ':prezto:module:screen:auto-start' remote 'yes'
+#zstyle ':prezto:module:screen:auto-start' remote 'yes'
 
 #
 # SSH
@@ -174,9 +175,9 @@ zstyle ':prezto:module:ssh:load' identities 'cscs_rsa' 'github_rsa' 'z4ws_rsa'
    'main' \
    'brackets' \
    'pattern' \
+   'root'
 #   'line' \
 #   'cursor' \
-#   'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
@@ -209,10 +210,10 @@ zstyle ':prezto:module:ssh:load' identities 'cscs_rsa' 'github_rsa' 'z4ws_rsa'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
-# zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
