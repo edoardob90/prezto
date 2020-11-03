@@ -42,7 +42,7 @@ case "$OSTYPE" in
         if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
         ;;
     *linux*)
-        if [[ -d "$HOME/.pyenv" ]]; then
+        if type -a pyenv 2>&1 >/dev/null && [[ -d "$HOME/.pyenv" ]]; then
           export PATH="$HOME/.pyenv/bin:$PATH";
           eval "$(pyenv init -)"
           eval "$(pyenv virtualenv-init -)"
